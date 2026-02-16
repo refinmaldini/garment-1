@@ -14,7 +14,6 @@ const LayoutWrapper: React.FC<LayoutWrapperProps> = ({ children }) => {
 
   // Transform values based on scroll progress
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const backgroundScale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
 
   return (
     <div ref={containerRef} className="relative">
