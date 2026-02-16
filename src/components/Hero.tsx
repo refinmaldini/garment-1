@@ -10,13 +10,11 @@ const Hero: React.FC = () => {
 
   // Create transforms based on scroll progress
   const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 1], [0.3, 1, 0]);
 
   return (
     <motion.section
       ref={containerRef}
       className="container mx-auto px-6 py-16 md:py-28 flex flex-col md:flex-row items-center gap-12"
-      style={{ opacity }}
     >
       <motion.div
         className="flex-1 space-y-8"

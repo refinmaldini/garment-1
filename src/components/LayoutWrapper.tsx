@@ -14,12 +14,16 @@ const LayoutWrapper: React.FC<LayoutWrapperProps> = ({ children }) => {
 
   // Transform values based on scroll progress
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const blur = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
 
   return (
     <div ref={containerRef} className="relative">
-      <motion.div 
-        style={{ 
+      <motion.div
+        style={{
           y: backgroundY,
+          filter: blur,
+          opacity,
         }}
         className="fixed inset-0 -z-10"
       >
